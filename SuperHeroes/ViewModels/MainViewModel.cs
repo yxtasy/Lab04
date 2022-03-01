@@ -37,7 +37,7 @@ namespace SuperHeroes.ViewModels
 
             ChoosenOnes.Add(AllHeroes[1].Copy());
 
-            // setup logic collections here
+            logic.SetupCollections(AllHeroes, ChoosenOnes);
 
             AddToChoosenOnes = new RelayCommand(
                 () => logic.AddToChoosenOnes(SelectedFromAllHeroes),
@@ -53,6 +53,12 @@ namespace SuperHeroes.ViewModels
                 () => logic.EditSuperheros(SelectedFromAllHeroes),
                 () => SelectedFromAllHeroes != null
                 );
+
+            Messenger.Register<MainViewModel, string, string>(this, "SuperheroesInfo", (recipient, msg) =>
+            {
+                OnPropertyChanged("AVGPower");
+                OnPropertyChanged("AVGSpeed");
+            });
 
         }
 
