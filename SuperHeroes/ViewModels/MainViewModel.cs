@@ -9,20 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using SuperHeroes.Logic;
+using System.ComponentModel;
+using System.Windows;
 
 namespace SuperHeroes.ViewModels
 {
     class MainViewModel : ObservableRecipient
     {
+        ILogic logic;
         public ObservableCollection<Superhero> AllHeroes;
         public ObservableCollection<Superhero> ChoosenOnes;
 
-        public MainViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IArmyLogic>())
+        public MainViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ILogic>())
         {
 
         }
-        public MainViewModel()
+        public MainViewModel(ILogic logic)
         {
+            this.logic = logic;
             AllHeroes = new ObservableCollection<Superhero>();
             ChoosenOnes = new ObservableCollection<Superhero>();
             AllHeroes.Add(new Superhero {Name="AAA", Strength=100, Speed=50, Side=Side.Evil });
@@ -45,7 +50,7 @@ namespace SuperHeroes.ViewModels
                 );
 
             EditAllHeroes = new RelayCommand(
-                () => logic.EditAllHeroes(SelectedFromAllHeroes),
+                () => logic.EditSuperheros(SelectedFromAllHeroes),
                 () => SelectedFromAllHeroes != null
                 );
 

@@ -8,9 +8,9 @@ namespace SuperHeroes.Logic
         double AVGpwr { get; }
         double AVGspeed { get; }
 
-        void AddToArmy(Superhero superhero);
-        void EditSuperhero(Superhero superhero);
-        void RemoveFromArmy(Superhero superhero);
+        void AddToChoosenOnes(Superhero superhero);
+        void EditSuperheros(Superhero superhero);
+        void RemoveFromChoosenOnes(Superhero superhero);
         void SetupCollections(IList<Superhero> superheroes, IList<Superhero> fighters);
     }
 }

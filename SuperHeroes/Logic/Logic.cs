@@ -41,17 +41,17 @@ namespace SuperHeroes.Logic
             this.fighters = fighters;
         }
 
-        public void AddToArmy(Superhero superhero)
+        public void AddToChoosenOnes(Superhero superhero)
         {
             fighters.Add(superhero.Copy());
             messenger.Send("Superhero added", "SuperheroInfo");
         }
-        public void RemoveFromArmy(Superhero superhero)
+        public void RemoveFromChoosenOnes(Superhero superhero)
         {
             fighters.Remove(superhero);
             messenger.Send("Superhero removed", "SuperheroInfo");
         }
-        public void EditSuperhero(Superhero superhero)
+        public void EditSuperheros(Superhero superhero)
         {
             editorService.Edit(superhero);
         }
