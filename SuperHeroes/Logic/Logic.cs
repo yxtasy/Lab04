@@ -9,24 +9,25 @@ using SuperHeroes.Services;
 
 namespace SuperHeroes.Logic
 {
-    class Logic
+    class Logic : ILogic
     {
         IList<Superhero> superheroes;
         IList<Superhero> fighters;
         IMessenger messenger;
         ISuperheroEditorService editorService;
 
-        public Logic(IMessenger messenger,ISuperheroEditorService editorService)
+        public Logic(IMessenger messenger, ISuperheroEditorService editorService)
         {
             this.messenger = messenger;
             this.editorService = editorService;
         }
-        public double AVGpwr {
+        public double AVGpwr
+        {
             get
-             {
-                return Math.Round(fighters.Count == 0 ? 0 : fighters.Average(t => t.Strength),2);
-             } 
+            {
+                return Math.Round(fighters.Count == 0 ? 0 : fighters.Average(t => t.Strength), 2);
             }
+        }
         public double AVGspeed
         {
             get
@@ -34,7 +35,7 @@ namespace SuperHeroes.Logic
                 return Math.Round(fighters.Count == 0 ? 0 : fighters.Average(t => t.Speed), 2);
             }
         }
-        public void SetupCollections(IList<Superhero> superheroes,IList<Superhero> fighters)
+        public void SetupCollections(IList<Superhero> superheroes, IList<Superhero> fighters)
         {
             this.superheroes = superheroes;
             this.fighters = fighters;
