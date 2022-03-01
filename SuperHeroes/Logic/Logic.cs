@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GalaSoft.MvvmLight.Messaging;
+
+using Microsoft.Toolkit.Mvvm.Messaging;
 using SuperHeroes.Models;
 using SuperHeroes.Services;
 

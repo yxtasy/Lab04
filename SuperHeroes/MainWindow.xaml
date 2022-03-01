@@ -55,6 +55,20 @@
             <Label x:Name="AVGspeed" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average speed: {0}" FontSize="16"></Label>
             <ProgressBar x:Name="AVGspeedbar" Minimum="0" Maximum="10" Value="5" Height="20" Margin="10"></ProgressBar>
         </ListBox>
+
+        <ListBox Grid.Column="2" ItemsSource="{Binding ChoosenOnes}" 
+                 SelectedItem="{Binding SelectedFromChoosenOne}" FontSize="16">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Name}"></Label>
+                        <Label Content="{Binding Strength}"></Label>
+                        <Label Content="{Binding Speed}"></Label>
+                        <Label Content="{Binding Side}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         
 
     </Grid>

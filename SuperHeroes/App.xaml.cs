@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using SuperHeroes.Logic;
 using SuperHeroes.Services;
-using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Toolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 
