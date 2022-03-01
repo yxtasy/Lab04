@@ -47,12 +47,12 @@
         </ListBox>
         <ListBox Grid.Column="1" HorizontalContentAlignment="Stretch">
             
-            <Button x:Name="Add" Content="Add hero"  Margin="10" Height="25" FontSize="18"></Button>
-            <Button x:Name="Remove" Content="Remove hero" Margin="10" Height="25"  FontSize="18" ></Button>
-            <Button x:Name="Edit" Content="Edit hero" Margin="10" Height="25"  FontSize="18" ></Button>
-            <Label x:Name="AVGpwer" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average power: {0}" FontSize="16"></Label>
+            <Button x:Name="Add" Command="{Binding AddToChoosenOnes}" Content="Add hero"  Margin="10" Height="25" FontSize="18"></Button>
+            <Button x:Name="Remove" Command="{Binding RemoveFromChoosenOnes}" Content="Remove hero" Margin="10" Height="25"  FontSize="18" ></Button>
+            <Button x:Name="Edit" Command="{Binding EditAllHeroes}" Content="Edit hero" Margin="10" Height="25"  FontSize="18" ></Button>
+            <Label x:Name="AVGpwer" Content="{Binding AVGPower}" Foreground="{Binding AVGPower, Converter={StaticResource colorconvert}}"  HorizontalAlignment="Center" ContentStringFormat="Average power: {0}" FontSize="16"></Label>
             <ProgressBar x:Name="AVGpwrbar" Minimum="0" Maximum="10" Value="5" Height="20" Margin="10"></ProgressBar>
-            <Label x:Name="AVGspeed" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average speed: {0}" FontSize="16"></Label>
+            <Label x:Name="AVGspeed" Content="{Binding AVGSpeed}" Foreground="{Binding AVGSpeed, Converter={StaticResource colorconvert}}" HorizontalAlignment="Center" ContentStringFormat="Average speed: {0}" FontSize="16"></Label>
             <ProgressBar x:Name="AVGspeedbar" Minimum="0" Maximum="10" Value="5" Height="20" Margin="10"></ProgressBar>
         </ListBox>
 

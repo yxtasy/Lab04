@@ -59,6 +59,18 @@ namespace SuperHeroes.ViewModels
         public ICommand AddToChoosenOnes { get; set; }
         public ICommand RemoveFromChoosenOnes { get; set; }
         public ICommand EditAllHeroes { get; set; }
+        public double AVGPower { get
+            {
+                return logic.AVGpwr;
+            }
+        }
+        public double AVGSpeed
+        {
+            get
+            {
+                return logic.AVGspeed;
+            }
+        }
 
         private Superhero selectedFromAllHeroes;
 
