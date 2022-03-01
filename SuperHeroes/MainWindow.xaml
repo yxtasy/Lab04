@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />                       
+                    </Grid.RowDefinitions>
+                        <Label x:Name="Name" Content="Name" Grid.Row="0" Grid.Column="0"></Label>
+                        <ProgressBar x:Name="Pwr" Grid.Row="1" Grid.Column="0" Minimum="0" Maximum="10" ></ProgressBar>
+                        <ProgressBar x:Name="Speed" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="10" ></ProgressBar>
+                        <Label x:Name="Type" Grid.Row="1" Grid.Column="2"></Label>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+            
+        </ListBox>
 
     </Grid>
 </Window>
