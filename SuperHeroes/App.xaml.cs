@@ -23,12 +23,14 @@ namespace SuperHeroes
         {
             Ioc.Default.ConfigureServices(
              new ServiceCollection()
+             .AddSingleton<ISuperheroEditorService, SuperheroEditorViaWindow>()
+             .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
                  .AddSingleton<ILogic, Logic.Logic>()                 
                  .BuildServiceProvider()
              );
         }
 
-            //.AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
-        //.AddSingleton<ISuperheroEditorService, TrooperEditorViaWindow>()
+            
+        
     }
 }
