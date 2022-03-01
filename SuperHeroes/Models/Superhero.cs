@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,14 @@ namespace SuperHeroes.Models
         Evil,
         Natural
     }
-    class Superhero
+    public class Superhero : ObservableObject
     {
-        private int name;
+        private string name;
 
-        public int Name
+        public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { SetProperty(ref name, value); }
         }
 
         private int strength;
@@ -27,7 +28,7 @@ namespace SuperHeroes.Models
         public int Strength
         {
             get { return strength; }
-            set { strength = value; }
+            set { SetProperty(ref strength, value); }
         }
 
         private int speed;
@@ -35,7 +36,7 @@ namespace SuperHeroes.Models
         public int Speed
         {
             get { return speed; }
-            set { speed = value; }
+            set { SetProperty(ref speed, value); }
         }
 
         private Side side;
@@ -43,7 +44,7 @@ namespace SuperHeroes.Models
         public Side Side
         {
             get { return side; }
-            set { side = value; }
+            set { SetProperty(ref side, value); }
         }
 
         public Superhero Copy()
