@@ -16,6 +16,8 @@ namespace SuperHeroes.ViewModels
 
         public MainViewModel()
         {
+            AllHeroes = new ObservableCollection<Superhero>();
+            ChoosenOnes = new ObservableCollection<Superhero>();
             AllHeroes.Add(new Superhero {Name="AAA", Strength=100, Speed=50, Side=Side.Evil });
             AllHeroes.Add(new Superhero { Name = "BBB", Strength = 50, Speed = 75, Side = Side.Good });
             AllHeroes.Add(new Superhero { Name = "CCC", Strength = 66, Speed = 65, Side = Side.Natural });

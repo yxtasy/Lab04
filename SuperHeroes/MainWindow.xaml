@@ -3,16 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:SuperHeroes.ViewModels"
         xmlns:local="clr-namespace:SuperHeroes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vms:MainViewModel></vms:MainViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0">
+        <ListBox Grid.Column="0" ItemsSource="{Binding AllHeroes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -25,10 +29,10 @@
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="1*" />                       
                     </Grid.RowDefinitions>
-                        <Label x:Name="Name" Content="Name" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label x:Name="Name" Content="{Binding Name}" Grid.Row="0" Grid.Column="0"></Label>
                         <ProgressBar x:Name="Pwr" Grid.Row="1" Grid.Column="0" Minimum="0" Maximum="10" ></ProgressBar>
                         <ProgressBar x:Name="Speed" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="10" ></ProgressBar>
-                        <Label x:Name="Type" Grid.Row="1" Grid.Column="2"></Label>
+                        <Label x:Name="Type" Content="{Binding Side}" Grid.Row="1" Grid.Column="2"></Label>
                         
                     </Grid>
                 </DataTemplate>
