@@ -30,8 +30,8 @@
                         <RowDefinition Height="1*" />                       
                     </Grid.RowDefinitions>
                         <Label x:Name="Name" Content="{Binding Name}" Grid.Row="0" Grid.Column="0"></Label>
-                        <ProgressBar x:Name="Pwr" Grid.Row="1" Grid.Column="0" Minimum="0" Maximum="10" ></ProgressBar>
-                        <ProgressBar x:Name="Speed" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="10" ></ProgressBar>
+                        <ProgressBar x:Name="Pwr" Grid.Row="1" Grid.Column="0" Minimum="0" Maximum="10" Height="20"></ProgressBar>
+                        <ProgressBar x:Name="Speed" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="10"  Height="20"></ProgressBar>
                         <Label x:Name="Type" Content="{Binding Side}" Grid.Row="1" Grid.Column="2"></Label>
                         
                     </Grid>
