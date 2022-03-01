@@ -41,7 +41,7 @@
             <Button x:Name="Add" Content="Add hero"  Margin="10" Height="25" FontSize="18"></Button>
             <Button x:Name="Remove" Content="Remove hero" Margin="10" Height="25"  FontSize="18" ></Button>
             <Button x:Name="Edit" Content="Edit hero" Margin="10" Height="25"  FontSize="18" ></Button>
-            <Label x:Name="AVGpwr" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average power: {0}" FontSize="16"></Label>
+            <Label x:Name="AVGpwer" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average power: {0}" FontSize="16"></Label>
             <ProgressBar x:Name="AVGpwrbar" Minimum="0" Maximum="10" Value="5" Height="20" Margin="10"></ProgressBar>
             <Label x:Name="AVGspeed" Content="5" HorizontalAlignment="Center" ContentStringFormat="Average speed: {0}" FontSize="16"></Label>
             <ProgressBar x:Name="AVGspeedbar" Minimum="0" Maximum="10" Value="5" Height="20" Margin="10"></ProgressBar>
