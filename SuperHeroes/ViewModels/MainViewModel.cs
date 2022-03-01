@@ -21,7 +21,8 @@ namespace SuperHeroes.ViewModels
         public ObservableCollection<Superhero> AllHeroes;
         public ObservableCollection<Superhero> ChoosenOnes;
 
-        public MainViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ILogic>())
+        public MainViewModel() 
+            : this(IsInDesignMode ? null : Ioc.Default.GetService<ILogic>())
         {
 
         }
